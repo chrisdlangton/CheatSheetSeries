@@ -70,11 +70,16 @@ The Attack Surface model may be rough and incomplete to start, especially if you
 Once you have a map of the Attack Surface, identify the high risk areas. Focus on remote entry points – interfaces with outside systems and to the Internet – and especially where the system allows anonymous, public access.
 
 - Network-facing, especially internet-facing code
-- Web forms
-- Files from outside of the network
+- Web forms, in particular uploads
+- Files from outside of the network, in particular public git (GitHub) or container repositories (Dockerhub)
 - Backward compatible interfaces with other systems – old protocols, sometimes old code and libraries, hard to maintain and test multiple versions
 - Custom APIs – protocols etc – likely to have mistakes in design and implementation
 - Security code: anything to do with cryptography, authentication, authorization (access control) and session management
+- Certificate infrastructure
+- Ad infrastrucutre and libraries
+- Social media libraries
+- CDN and hosted assets
+- Third party libraries (Identity, payments, marketting, email, etc.)
 
 These are often where you are most exposed to attack. Then understand what compensating controls you have in place, operational controls like network firewalls and application firewalls, and intrusion detection or prevention systems to help protect your application.
 
